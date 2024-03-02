@@ -19,8 +19,8 @@ public class UploadTXT {
             while ((aux = br.readLine()) != null){
                 lectura = lectura + aux + "\n";
             }
-        }catch (IOException e){}
-        return lectura.toLowerCase(); // Convertimos a minúsculas para ser insensibles a mayúsculas.
+        }catch (IOException ignored){}
+        return lectura.toLowerCase();
     }
 
 

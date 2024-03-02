@@ -1,8 +1,7 @@
-import java.io.IOException;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         UploadTXT upload = new UploadTXT();
 
         String text1 = upload.readFile();
@@ -16,5 +15,7 @@ public class Main {
         for (String misspelling : misspellings) {
             System.out.println(misspelling);
         }
+
+
     }
 }

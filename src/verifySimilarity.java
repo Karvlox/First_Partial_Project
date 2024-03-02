@@ -7,11 +7,11 @@ public class verifySimilarity {
         text1 = text1.toLowerCase();
         text2 = text2.toLowerCase();
 
-        // Split texts into words
         String[] words1 = text1.split("\\s+");
         String[] words2 = text2.split("\\s+");
 
-        // Calculate similarity percentage using dynamic programming
+
+
         int[][] dp = new int[words1.length + 1][words2.length + 1];
         for (int i = 1; i <= words1.length; i++) {
             for (int j = 1; j <= words2.length; j++) {
@@ -23,19 +23,16 @@ public class verifySimilarity {
             }
         }
         int maxLength = Math.max(words1.length, words2.length);
-        double similarityPercentage = (double) dp[words1.length][words2.length] / maxLength * 100;
 
-        return similarityPercentage;
+        return (double) dp[words1.length][words2.length] / maxLength * 100;
     }
 
     public static List<String> findMisspellings(String text1, String text2) {
         List<String> misspellings = new ArrayList<>();
 
-        // Split texts into words
         String[] words1 = text1.split("\\s+");
         String[] words2 = text2.split("\\s+");
 
-        // Find misspelled words
         for (String word : words2) {
             boolean found = false;
             for (String compareWord : words1) {
